@@ -1,6 +1,7 @@
 package com.example.quickchat;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,6 +44,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Chat");
+        //actionBar.setIcon(R.mipmap.ic_launcher);
+        actionBar.setDisplayShowHomeEnabled(true);
+        //getActionBar().setTitle("Chat");
         auth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
         profileName=findViewById(R.id.profile_name);

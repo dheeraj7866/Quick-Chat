@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/browser_actions_bg_grey"
     tools:context=".LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +19,9 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="100dp"
+            android:layout_marginBottom="10dp"
             android:layout_height="100dp"
-            android:src="@drawable/undefined" />
+            android:src="@drawable/whatsapp" />
 
 
         <TextView
@@ -27,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
+            android:textStyle="bold"
             android:text="Welcome Back" />
 
         <EditText
@@ -81,7 +84,7 @@
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:textSize="25dp"
-        android:textColor="#A020F0"
+        android:textColor="#075E54"
         />
 
     </LinearLayout>

@@ -52,8 +52,9 @@ public class RegistrationActivity extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
         storage=FirebaseStorage.getInstance();
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Please Wait...");
-        progressDialog.setCancelable(true);
+        progressDialog.setTitle("Please Wait...");
+        progressDialog.setMessage("We are creating your account.");
+        //progressDialog.setCancelable(true);
 
         btn_signup=findViewById(R.id.btn_signup);
         profile_image=findViewById(R.id.profile_image);
@@ -102,7 +103,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                progressDialog.dismiss();
+                                //progressDialog.dismiss();
 
                                 DatabaseReference databaseReference=database.getReference().child("user").child(auth.getUid());
                                 StorageReference storageReference=storage.getReference().child("upload").child(auth.getUid());
@@ -113,7 +114,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                                             if(task.isSuccessful()){
 
-                                                progressDialog.dismiss();
+                                                //progressDialog.dismiss();
                                                 storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                     @Override
                                                     public void onSuccess(Uri uri) {
@@ -123,6 +124,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if(task.isSuccessful()){
+                                                                    progressDialog.dismiss();
                                                                     startActivity(new Intent(RegistrationActivity.this,HomeActivity.class));
                                                                 } else {
                                                                     Toast.makeText(RegistrationActivity.this,"Error in creating user",Toast.LENGTH_SHORT).show();

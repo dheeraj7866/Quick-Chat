@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
         auth=FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Please Wait...");
+        progressDialog.setTitle("Please Wait...");
         progressDialog.setCancelable(true);
 
         login_email=findViewById(R.id.login_email);

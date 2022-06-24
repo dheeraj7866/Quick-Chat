@@ -67,6 +67,7 @@
                 android:id="@+id/edtMessage"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:ems="10"
                 android:background="#EBEEEF"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
